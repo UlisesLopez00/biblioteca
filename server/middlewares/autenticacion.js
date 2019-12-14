@@ -5,7 +5,7 @@ let verificarToken = (req, res, next) => {
 
     jwt.verify(token, process.env.SEED, (err, decoded) => {
         if (err) {
-            return status(401).json({
+            return res.status(401).json({
                 ok: false,
                 err
             });

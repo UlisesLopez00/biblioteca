@@ -11,8 +11,8 @@ const Libro = require('../models/libro');
 
 app.use(fileUpload());
 
-app.put('/upload/:ruta', [verificarToken], (req, res) => {
-    let id = req.body.id;
+app.put('/upload/:ruta/:id', [verificarToken], (req, res) => {
+    let id = req.params.id;
     let ruta = req.params.ruta;
     let archivo = req.files.archivo;
     let nombre = uniqid() + path.extname(archivo.name);
@@ -36,7 +36,7 @@ app.put('/upload/:ruta', [verificarToken], (req, res) => {
         });
     }
 
-    archivo.mv(`uploads/${ruta}/${nombre}`, (err) => {
+    archivo.mv(`upload/${ruta}/${nombre}`, (err) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
@@ -46,8 +46,8 @@ app.put('/upload/:ruta', [verificarToken], (req, res) => {
     });
 
     switch (ruta) {
-        case 'producto':
-            imagenProducto(id, res, nombre);
+        case 'libro':
+            imagenLibro(id, res, nombre);
 
             break;
         case 'usuario':

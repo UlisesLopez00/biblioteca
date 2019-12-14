@@ -6,25 +6,22 @@ const Prestamo = require('../models/prestamo');
 const app = express();
 
 app.get('/prestamo', [verificarToken], (req, res) => {
-    let desde = req.params.desde || 0;
-    desde = Number(desde);
 
-    Prestamo.find()
-        .skip(10)
-        .limit(5)
-        .exec((err, prestamos) => {
-            if (err) {
-                return res.status(400).json({
-                    ok: false,
-                    err
-                });
-            }
-            return res.status(200).json({
-                ok: true,
-                count: prestamos.length,
-                prestamos
+    Prestamo.find({ estado: true })
+
+    .exec((err, prestamos) => {
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                err
             });
+        }
+        return res.status(200).json({
+            ok: true,
+            count: prestamos.length,
+            prestamos
         });
+    });
 });
 
 app.post('/prestamo', [verificarToken], (req, res) => {
@@ -70,8 +67,10 @@ app.put('/prestamo', [verificarToken], (req, res) => {
 
 
 
-app.delete('/prestamo/:id', [verificarToken], (req, res) => {
-    let id = req.params.id;
+
+
+app.delete('/prestamo', [verificarToken], (req, res) => {
+    let id = req.body.id;
     //     Usuario.deleteOne({ _id: id }, (err, resp) => {
     //         if (err) {
     //             return res.status(400).json({

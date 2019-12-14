@@ -20,7 +20,11 @@ let prestamoSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Libro",
         required: [true, 'Por favor ingresa el id del Libro']
-    }
+    },
+    estado: {
+        type: Boolean,
+        default: true
+    },
 });
 
 prestamoSchema.plugin(uniqueValidator, {

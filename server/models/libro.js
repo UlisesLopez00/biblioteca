@@ -20,7 +20,7 @@ let libroSchema = new Schema({
     editorial: {
         type: String,
         required: [true, 'Por favor ingresa la editorial']
-    }
+    },
 });
 
 libroSchema.plugin(uniqueValidator, {
