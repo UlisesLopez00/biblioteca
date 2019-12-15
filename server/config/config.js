@@ -8,13 +8,9 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 let urlDB;
 
 if (process.env.NODE_ENV === 'dev') {
-    urlDB = 'mongodb://localhost:27017/bibliotecta'
+    urlDB = 'mongodb://localhost:27017/biblioteca'
 } else {
-    urlDB = 'mongodb+srv://admin:EUVqYxJ6owAN4X0q@cluster0-naw0h.mongodb.net/biblioteca'
+    urlDB = 'mongodb+srv://admin:PHLbepXQm0dKyc9j@cluster0-6tqns.mongodb.net/biblioteca'
 }
 
 process.env.URLDB = urlDB;
-
-process.env.SEED = process.env.SEED || 'Firma super secreta';
-
-process.env.CADUCIDAD_TOKEN = process.env.CADUCIDAD_TOKEN || '3h';

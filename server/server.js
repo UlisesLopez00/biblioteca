@@ -9,7 +9,7 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
         'Access-Control-Allow-Headers',
-        'Origin,Access-Control-Allow-Origin, X-Requested-With, Content-Type, Accept, Authorization,token'
+        'Origin, X-Requested-With, Content-Type, Accept, Authorization,tokrn'
     );
     res.setHeader(
         'Access-Control-Allow-Methods',
