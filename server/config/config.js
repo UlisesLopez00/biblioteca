@@ -10,7 +10,7 @@ let urlDB;
 if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/biblioteca'
 } else {
-    urlDB = 'mongodb+srv://admin:PHLbepXQm0dKyc9j@cluster0-6tqns.mongodb.net/biblioteca'
+    urlDB = 'mongodb+srv://ulises:TEzx0pH8dOea5QKZ@cluster0-6tqns.mongodb.net/biblioteca'
 }
 
 process.env.URLDB = urlDB;
