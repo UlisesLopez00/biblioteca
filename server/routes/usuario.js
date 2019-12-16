@@ -5,7 +5,7 @@ const { verificarToken } = require('../middlewares/autenticacion');
 const Usuario = require('../models/usuario');
 const app = express();
 
-app.get('/usuario', (req, res) => {
+app.get('/usuario', [verificarToken], (req, res) => {
     let desde = req.params.desde || 0;
     desde = Number(desde);
 
