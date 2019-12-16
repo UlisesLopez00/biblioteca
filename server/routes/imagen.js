@@ -6,7 +6,7 @@ const app = express();
 app.get('/imagen/:ruta/:img', (req, res) => {
     let ruta = req.params.ruta;
     let img = req.params.img;
-    let rutaImagen = path.resolve(__dirname, `../../uploads/${ruta}/${img}`);
+    let rutaImagen = path.resolve(__dirname, `../../upload/${ruta}/${img}`); //tu tenias uploads y es solo upload
     let noImage = path.resolve(__dirname, `../assets/noimage.png`);
 
     if (fs.existsSync(rutaImagen)) {
