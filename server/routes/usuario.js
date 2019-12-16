@@ -19,7 +19,7 @@ app.get('/usuario', [verificarToken], (req, res) => {
             }
             return res.status(200).json({
                 ok: true,
-                //count: usuarios.length,
+                count: usuarios.length,
                 usuarios
             });
         });
