@@ -28,3 +28,7 @@ steps:
     cliProjectKey: 'uliseslopez181224_biblioteca'
     cliProjectName: 'biblioteca'
     cliSources: '.'
+- task: SonarCloudAnalyze@1
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '1000'
