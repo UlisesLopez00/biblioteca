@@ -21,7 +21,7 @@
         "mongoose": "^5.7.13",
         "mongoose-unique-validator": "^2.0.3",
         "node-datetime": "^2.1.2",
-        "nodemon": "^2.0.1",
+        "nodemon": "^2.0.17",
         "underscore": "^1.9.1",
         "uniqid": "^5.2.0"
     }
